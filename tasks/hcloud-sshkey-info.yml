@@ -1,0 +1,9 @@
+---
+- name: "Ensure public ssh keys are present on Hetzner Cloud."
+  hetzner.hcloud.hcloud_ssh_key_info:
+    api_token: "{{ hcloud_sshkey_api_token_ro }}"
+  register: register_sshkey_info
+
+- name: "Print ssh key info to screen."
+  debug:
+    var: register_sshkey_info

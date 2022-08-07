@@ -1,0 +1,8 @@
+---
+# tasks file for hcloud_sshkey
+
+- import_tasks: hcloud-sshkey-manage-keys.yml
+
+- import_tasks: hcloud-sshkey-info.yml
+  tags:
+    - info

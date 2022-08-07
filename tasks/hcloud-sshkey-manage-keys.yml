@@ -1,0 +1,16 @@
+---
+- name: "Ensure public ssh keys are present on Hetzner Cloud."
+  hetzner.hcloud.hcloud_ssh_key:
+    api_token: "{{ hcloud_sshkey_api_token_rw }}"
+    name: "{{ key.name }}"
+    public_key: "{{ key.key }}"
+    state: "{{ key.state }}"
+  loop: "{{ hcloud_sshkey_keys }}"
+  loop_control:
+    loop_var: key
+    label: "{{ key.name }}"
+  register: register_sshkey
+
+- name: "Debug ssh key management."
+  debug:
+    var: register_sshkey
