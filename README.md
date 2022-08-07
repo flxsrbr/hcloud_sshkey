@@ -28,6 +28,13 @@ Role Variables
 |                    | key     | str      | Public ssh key.                                         | "ssh-ed25519 ..." |
 |                    | state   | str      | Desired state of key on Hetzner Cloud.                  | "present"         |
 
+Tags
+----
+
+| Tag                    | Description                                 |
+|------------------------|---------------------------------------------|
+| info                   | Only get info on current ssh keys       |
+
 Dependencies
 ------------
 
