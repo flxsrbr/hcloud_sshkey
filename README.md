@@ -57,7 +57,7 @@ Example Playbook
             hcloud_sshkey_api_token_ro: "{{ vault_hcloud_token_ro }}"
             hcloud_sshkey_keys:
               - name: "ansible"
-                file: "{{ lookup('file', '/path/to/file/id_ed25519.pub') }}"
+                key: "{{ lookup('file', '/path/to/file/id_ed25519.pub') }}"
                 state: present
 
 
